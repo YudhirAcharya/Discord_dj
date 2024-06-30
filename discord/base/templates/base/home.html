@@ -6,7 +6,10 @@
     <div>
         {%for room in rooms%}
             <div>
-                <h5>{{room.id}} -- <a href="/room/{{room.id}}">{{room.name}} </a>-- {{room.description}}</h5>
+                <span>@{{room.host.username}}</span>
+                <h5>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}} </a>-- {{room.description}}</h5>
+                <span>@{{room.topic.name}}</span>
+                <hr>
             </div>
         
             {% if room.id == 3 %}
